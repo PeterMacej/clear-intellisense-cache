@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <Extern href="stdidcmd.h"/>
+    <Extern href="vsshlids.h"/>
+    <Include href="KnownImageIds.vsct"/>
+    <Include href="VSGlobals.vsct"/>
+
+    <Commands package="ClearIntelliSenseCache">
+        <Groups>
+            <Group guid="ClearIntelliSenseCache" id="MyMenuGroup" priority="0x0600">
+                <Parent guid="VSMainMenu" id="Tools"/>
+            </Group>
+        </Groups>
+
+        <!--This section defines the elements the user can interact with, like a menu command or a button
+        or combo box in a toolbar. -->
+        <Buttons>
+            <Button guid="ClearIntelliSenseCache" id="ClearIntellisenseCommand" priority="0x0100" type="Button">
+                <Parent guid="ClearIntelliSenseCache" id="MyMenuGroup" />
+                <Icon guid="ImageCatalogGuid" id="CleanData" />
+                <!--maybe id="CacheRefresh" would be also good-->
+                <CommandFlag>IconIsMoniker</CommandFlag>
+                <CommandFlag>DynamicVisibility</CommandFlag>
+                <CommandFlag>DefaultInvisible</CommandFlag>
+                <Strings>
+                    <ButtonText>Clear solution IntelliSense cache</ButtonText>
+                    <!--Command name used in Tools/Customize dialog-->
+                    <CommandName>Clear solution IntelliSense cache</CommandName>
+                    <!--Text shown in menu items-->
+                    <MenuText>Clear solution IntelliSense cache</MenuText>
+                    <ToolTipText>Clear solution IntelliSense cache</ToolTipText>
+                    <!--Command name used in Tools/Options dialog in the Keyboard page and in Command tool window-->
+                    <LocCanonicalName>.ClearIntelliSenseCache.ClearIntellisense</LocCanonicalName>
+                </Strings>
+            </Button>
+        </Buttons>
+    </Commands>
+
+    <!--Show the button also under Solution node in the Solution explorer.-->
+    <CommandPlacements>
+        <CommandPlacement guid="ClearIntelliSenseCache" id="MyMenuGroup" priority="0x0200">
+            <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_SOLNNODE" />
+        </CommandPlacement>
+    </CommandPlacements>
+
+    <!--Restrict the command to be available only if a solution is loaded.-->
+    <VisibilityConstraints>
+        <VisibilityItem guid="ClearIntelliSenseCache" id="ClearIntellisenseCommand"
+          context="UICONTEXT_SolutionExistsAndFullyLoaded"/>
+    </VisibilityConstraints>
+
+    <Symbols>
+        <GuidSymbol name="ClearIntelliSenseCache" value="{ac3fa4e9-7ecd-4517-b7b4-2115c00bb0c4}">
+            <IDSymbol name="MyMenuGroup" value="0x0001" />
+            <IDSymbol name="ClearIntellisenseCommand" value="0x0100" />
+        </GuidSymbol>
+
+        <!-- VS guids that are not included from .h files-->
+        <GuidSymbol name="UICONTEXT_SolutionExists" value="{f1536ef8-92ec-443c-9ed7-fdadf150da82}" />
+        <GuidSymbol name="UICONTEXT_SolutionHasSingleProject" value="{ADFC4E66-0397-11D1-9F4E-00A0C911004F}" />
+        <GuidSymbol name="UICONTEXT_SolutionHasMultipleProjects" value="{93694FA0-0397-11D1-9F4E-00A0C911004F}" />
+        <GuidSymbol name="UICONTEXT_SolutionExistsAndFullyLoaded" value="{10534154-102D-46E2-ABA8-A6BFA25BA0BE}" />
+        <GuidSymbol name="UICONTEXT_SolutionExistsAndNotBuildingAndNotDebugging" value="{D0E4DEEC-1B53-4CDA-8559-D454583AD23B}" />
+        <GuidSymbol name="UICONTEXT_SolutionBuilding" value="{ADFC4E60-0397-11D1-9F4E-00A0C911004F}" />
+        <GuidSymbol name="UICONTEXT_EmptySolution" value="{ADFC4E65-0397-11D1-9F4E-00A0C911004F}" />
+        <GuidSymbol name="UICONTEXT_NoSolution" value="{ADFC4E64-0397-11D1-9F4E-00A0C911004F}" />
+        <GuidSymbol name="UICONTEXT_SolutionOpening" value="{D2567162-F94F-4091-8798-A096E61B8B50}" />
+
+    </Symbols>
+</CommandTable>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+    <Metadata>
+        <Identity Id="ClearIntelliSenseCache.144e5920-4b44-455c-8ac4-5fdcd17838fb" Version="1.0" Language="en-US" Publisher="Helixoft" />
+        <DisplayName>Clear Solution IntelliSense Cache</DisplayName>
+        <Description xml:space="preserve">Clears the solution IntelliSense cache to fix issues with broken IntelliSense at design time, such as false or missing compile errors, etc.</Description>
+        <MoreInfo>https://marketplace.visualstudio.com/items?itemName=PeterMacej.ClearSolutionIntelliSenseCache</MoreInfo>
+        <License>LICENSE</License>
+        <ReleaseNotes>https://github.com/PeterMacej/clear-intellisense-cache/Release%20notes</ReleaseNotes>
+        <Icon>Resources\Icon.png</Icon>
+        <PreviewImage>Resources\ClearIntellisense_preview.png</PreviewImage>
+        <Tags>clear, fix, broken, corrupt, IntelliSense, cache</Tags>
+    </Metadata>
+    <Installation>
+        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0, 18.0)">
+            <ProductArchitecture>amd64</ProductArchitecture>
+        </InstallationTarget>
+    </Installation>
+    <Prerequisites>
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[17.0,)" DisplayName="Visual Studio core editor" />
+    </Prerequisites>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+    </Assets>
+</PackageManifest>
