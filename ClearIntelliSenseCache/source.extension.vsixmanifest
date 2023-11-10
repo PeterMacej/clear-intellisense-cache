@@ -6,7 +6,7 @@
         <Description xml:space="preserve">Clears the solution IntelliSense cache to fix issues with broken IntelliSense at design time, such as false or missing compile errors, etc.</Description>
         <MoreInfo>https://marketplace.visualstudio.com/items?itemName=PeterMacej.ClearSolutionIntelliSenseCache</MoreInfo>
         <License>LICENSE</License>
-        <ReleaseNotes>https://github.com/PeterMacej/clear-intellisense-cache/Release%20notes</ReleaseNotes>
+        <ReleaseNotes>https://petermacej.github.io/clear-intellisense-cache/Release%20notes</ReleaseNotes>
         <Icon>Resources\Icon.png</Icon>
         <PreviewImage>Resources\ClearIntellisense_preview.png</PreviewImage>
         <Tags>clear, fix, broken, corrupt, IntelliSense, cache</Tags>
