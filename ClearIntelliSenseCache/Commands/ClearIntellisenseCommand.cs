@@ -11,6 +11,14 @@ using System.Collections.Generic;
 
 namespace ClearIntelliSenseCache
 {
+
+    /// <summary>
+    /// Command handler for the ClearIntellisense command.
+    /// </summary>
+    /// <remarks>
+    /// The command clears the IntelliSense cache for the current solution. 
+    /// It does this by closing the solution, deleting the IntelliSense cache files, and then reopening the solution.
+    /// </remarks>
     [Command(PackageIds.ClearIntellisenseCommand)]
     internal sealed class ClearIntellisenseCommand : BaseCommand<ClearIntellisenseCommand>
     {

@@ -69,6 +69,7 @@
       <Link>LICENSE</Link>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <None Include="ClearIntelliSenseCache.vsdoc" />
     <None Include="Helixoft_sign.targets" />
     <None Include="Resources\Icon attribution.md" />
     <None Include="source.extension.vsixmanifest">

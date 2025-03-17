@@ -5,8 +5,18 @@ global using Task = System.Threading.Tasks.Task;
 using System.Runtime.InteropServices;
 using System.Threading;
 
+
+#pragma warning disable 1587
+/// <summary>
+/// The main namespace for the Clear IntelliSense Cache extension.
+/// </summary>
 namespace ClearIntelliSenseCache
+#pragma warning restore 1587
 {
+
+    /// <summary>
+    /// The main package class that initializes the extension.
+    /// </summary>
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [InstalledProductRegistration(Vsix.Name, Vsix.Description, Vsix.Version)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
